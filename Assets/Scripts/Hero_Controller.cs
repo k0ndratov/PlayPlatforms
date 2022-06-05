@@ -13,15 +13,26 @@ public class Hero_Controller : MonoBehaviour
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();    
+        rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
-        rb.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, rb.velocity.y);
+        Move();
+        Jump();
+    }
+
+    private void Move()
+    {
+        float moveDirectional = Input.GetAxisRaw("Horizontal");
+
+        rb.velocity = new Vector2(moveDirectional * moveSpeed, rb.velocity.y);
+    }
+
+    private void Jump()
+    {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("Jump!");
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
     }
