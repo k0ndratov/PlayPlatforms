@@ -1566,7 +1566,7 @@ Transform:
   - {fileID: 445522627}
   - {fileID: 2102008988}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &138875728
 GameObject:
@@ -2168,7 +2168,7 @@ GameObject:
   - component: {fileID: 225386431}
   - component: {fileID: 225386430}
   - component: {fileID: 225386432}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tilemap_ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15280,6 +15280,7 @@ GameObject:
   - component: {fileID: 2106532743}
   - component: {fileID: 2106532742}
   - component: {fileID: 2106532746}
+  - component: {fileID: 2106532747}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Hero
@@ -15329,7 +15330,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 1d527021ba3fc224c8fcca11cf0622ca, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -15399,7 +15400,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2106532746
 MonoBehaviour:
@@ -15413,5 +15414,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 301728747d54fd742ad09a42a8f354cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
   moveSpeed: 7
   jumpForce: 7
+--- !u!95 &2106532747
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106532741}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 010fa2e4ea838604ebd79d0af80b5b7f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -13,10 +13,15 @@ public class Hero_Controller : MonoBehaviour
     [Range(0, 15)]
     public float jumpForce;
 
+    private Animator anim;
+    private SpriteRenderer spr;
+
     private void Awake()
     {
         coll = GetComponent<Collider2D>();
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        spr = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -30,6 +35,26 @@ public class Hero_Controller : MonoBehaviour
         float moveDirectional = Input.GetAxisRaw("Horizontal");
 
         rb.velocity = new Vector2(moveDirectional * moveSpeed, rb.velocity.y);
+        UpdateAnimation(moveDirectional);
+    }
+
+    private void UpdateAnimation(float moveDirectional)
+    {
+        if (moveDirectional > 0)
+        {
+            spr.flipX = false;
+            anim.SetBool("isRunning", true);
+        }
+        else if (moveDirectional < 0)
+        {
+            spr.flipX = true;
+            anim.SetBool("isRunning", true);
+        }
+        else
+        {
+            spr.flipX = false;
+            anim.SetBool("isRunning", false);
+        }
     }
 
     private void Jump()
