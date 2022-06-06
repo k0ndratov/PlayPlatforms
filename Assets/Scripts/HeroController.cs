@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hero_Controller : MonoBehaviour
+public class HeroController : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Collider2D coll;
