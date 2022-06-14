@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlyingAvilController : MonoBehaviour
+public class WayPointsFollower : MonoBehaviour
 {
     public GameObject[] wayPoints;
     int currentWayPoint = 0;
